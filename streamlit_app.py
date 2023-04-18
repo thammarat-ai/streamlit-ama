@@ -16,7 +16,7 @@ def get_db():
     return db
 
 def post_message(db: Client, name, message, is_private):
-    payload = {"name": name, "message": message, "is_private": is_private}
+    payload = {"name": name, "message": message, "is_private": is_private, "answer": ""}
     doc_ref = db.collection("messages").document()
     doc_ref.set(payload)
     return doc_ref.id

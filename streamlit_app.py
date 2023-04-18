@@ -24,11 +24,11 @@ def post_message(db: Client, name, message, is_private):
 
 def main():
     st.title("Thammarat's AMA")
-    st.write("Ask me anything!")
+    st.write("AMA = Ask me anything, ถามอะไรหน่อยสิ")
     
     db = get_db()
     
-    with st.expander("Get all messages"):
+    with st.expander("แสดงข้อความทั้งหมด"):
         posts_ref = db.collection('messages')
         
         for doc in posts_ref.stream():
